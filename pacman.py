@@ -199,7 +199,7 @@ def main():
     ourPacman = Pacman(pacmanCoordinates[0], pacmanCoordinates[1])
     ourGhost = Ghost(ourGame)
 
-    while ourGame.gameOver == False:
+    while ourGame.gameOver == False and ourPacman.score<20:
         ourGame.printGame()
         ourPacman.printScore()
         inp = raw_input("Enter Move: ")
@@ -213,6 +213,7 @@ def main():
     if ourGame.gameOver:
         ourGame.printGame()
         print "Game Over your score was " + str(ourPacman.score)
-
+    if ourPacman.score==20:
+        print "You have collected all coins. You win"
 
 main()
